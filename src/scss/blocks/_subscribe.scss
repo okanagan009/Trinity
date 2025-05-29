@@ -1,0 +1,103 @@
+@use "../variables";
+@use "../grid";
+.subscribe {
+    background-color: variables.$blueRibbon;
+    padding: 98px 0;
+
+    @include grid.bp(md) {
+        padding: 60px 0;
+    }
+
+    &__title {
+        color: variables.$white;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 48px;
+        text-align: center;
+        margin-bottom: 30px;
+        letter-spacing: 0;
+
+        @include grid.bp(md) {
+            font-size: 30px;
+            line-height: 40px;
+        }
+
+        @include grid.bp(xs) {
+            font-size: 24px;
+            line-height: 31px;
+        }
+    }
+
+    &__text {
+        color: variables.$white;
+        margin-bottom: 50px;
+        text-align: center;
+
+        @include grid.bp(md) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__form-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+
+        @include grid.bp(lg) {
+            flex-direction: column;
+        }
+
+        @include grid.bp(md) {
+            gap: 25px;
+            ;
+        }
+
+        @include grid.bp(xs) {
+            align-items: normal;
+        }
+    }
+
+    &__input-mail {
+        padding: 15px 12px;
+        width: 370px;
+        background: #FFFFFF;
+        border-radius: 6px;
+
+        // margin-left: 20px;
+        @include grid.bp(lg) {
+            width: 340px;
+        }
+
+        @include grid.bp(xs) {
+            width: 100%;
+        }
+    }
+
+    &__input-mail::placeholder {
+        color: rgba(21, 23, 31, 0.5);
+    }
+
+    &__button {
+        padding: 13px 12px;
+        width: 327px;
+        border-radius: 6px;
+        letter-spacing: 0.8px;
+
+        @include grid.bp(lg) {
+            width: 340px;
+        }
+
+        @include grid.bp(xs) {
+            width: 100%;
+        }
+
+        &:active {
+            border-radius: 6px;
+        }
+    }
+}
+
+.subscribe__form-inner .subscribe__button.button.button--green:hover {
+    border-radius: 6px;
+}

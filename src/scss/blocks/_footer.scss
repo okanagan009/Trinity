@@ -1,0 +1,124 @@
+@use "../variables";
+@use "../grid";
+.footer {
+    padding: 90px 0 30px 0;
+    background-color: variables.$mirage;
+    @include grid.bp(md) {
+        padding: 60px 0;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 58px;
+        @include grid.bp(md) {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__inner {
+        @include grid.bp(md) {
+            text-align: center;
+        }
+    }
+
+    &__logo {
+        cursor: pointer;
+        margin-bottom: 25px;
+        @include grid.bp(md) {
+            margin: 0 auto 30px auto;
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        margin-bottom: 20px;
+        @include grid.bp(md) {
+            justify-content: center;
+        }
+    }
+
+    &__social-link {
+        cursor: pointer;
+    }
+
+    &__text {
+        color: rgba(255, 255, 255, 0.5);
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 24px;
+        @include grid.bp(md) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__buy {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: variables.$white;
+        margin-bottom: 40px;
+        transform: translateX(-142px);
+        @media screen and (max-width:990px) {
+            transform: translateX(0px);
+        }
+        @include grid.bp(md) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__offer {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: variables.$white;
+        transform: translateX(-142px);
+        @media screen and (max-width:990px) {
+            transform: translateX(0px);
+        }
+        @include grid.bp(md) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__inner--contacts {
+        display: flex;
+        gap: 30px;
+
+        @include grid.bp(xs) {
+            flex-direction: column;
+        }
+    }
+
+    &__contacts-mail {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 23px;  
+        color: variables.$white;   
+        margin-bottom: 15px;   
+    }
+
+    &__contacts-phone {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 23px;  
+        color: variables.$white;       
+    }
+
+    &__button {
+        height: 50px;
+    }
+
+    &__content {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        max-width: 928px;
+        margin: 0 auto;
+    }
+}

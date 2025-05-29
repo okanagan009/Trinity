@@ -1,0 +1,47 @@
+@use "../grid";
+
+.account {
+    padding: 126px 0;
+    @include grid.bp(md) {
+        padding: 60px 0;
+    }
+    &__title {
+        font-family: 'IBMPlexSans-Light';
+        font-weight: 300;
+        font-size: 40px;
+        line-height: 52px;
+        margin-bottom: 30px;
+        text-align: center;
+        @include grid.bp(md) {
+            font-size: 30px;
+            line-height: 40px;
+        }
+        @include grid.bp(xs) {
+            font-size: 24px;
+        }
+    }
+
+    &__text {
+        font-family: 'IBMPlexSans-Light';
+        margin-bottom: 50px;
+        font-size: 24px;
+        line-height: 31px;
+        text-align: center;
+        @include grid.bp(xs) {
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 21px;
+        }
+    }
+
+    &__button {
+        letter-spacing: 2px;
+        padding: 22px 74px;
+        margin: 0 auto;
+        @include grid.bp(xs) {
+            padding: 10px 74px;
+            height: 56px;
+            width: 100%;
+        }
+    }
+}

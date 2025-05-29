@@ -1,0 +1,163 @@
+@use "../grid";
+
+.cashless {
+    padding: 120px 0;
+    @include grid.bp(md) {
+        padding: 60px 0;
+    }
+    &__title {
+        margin-bottom: 60px;
+        @include grid.bp(md) {
+            margin-bottom: 0px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        @media screen and (max-width: 1250px) {
+            flex-wrap: wrap;
+            justify-content: center;
+            // width: 700px;
+            margin: 0 auto;
+        }
+        @include grid.bp(md) {
+            // width: 450px;
+            gap: 30px;
+        }
+        @include grid.bp(xs) {
+            width: 100%;
+            gap: 30px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        padding: 30px 19px;
+        background: #FFFFFF;
+        border: 1px solid #D0D3DE;
+        border-radius: 16px;
+        width: 290px;
+        @media screen and (max-width: 1250px) {
+            width: 48%;
+        }
+        @media screen and (max-width: 1030px) {
+            width: 47.6666%;
+        }
+        @media screen and (max-width: 890px) {
+            width: 47%;
+        }
+        @media screen and (max-width: 640px) {
+            width: 100%;
+        }
+    }  
+
+    &__item:hover {
+        border: 2px solid #3367FE;
+        padding: 29px 18px;
+        box-shadow: 0px 20px 28px rgba(0, 0, 0, 0.1);
+        @include grid.bp(md) {
+            border: 1px solid #D0D3DE;
+            padding: 30px 19px;
+            box-shadow: none;
+        }
+    } 
+    &__item:hover .cashless__item-name {
+        color:#3367FE;
+        @include grid.bp(md) {
+            color: #15171F;
+        }
+    } 
+
+
+
+    &__item-name {
+        position: relative;
+        padding-top: 180px;
+        margin-bottom: 30px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28px;
+        text-align: center;
+       
+    }
+    &__item-name::before {
+        content: " ";
+        position: absolute;
+        width: 134px;
+        height: 127px;
+        top: 21px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-repeat: no-repeat;
+    }
+    &__item-name.cashless__item-name--icon-1::before  {
+        background-image: url('../img/cashless-icon-1.svg');
+    }
+    &__item-name.cashless__item-name--icon-2::before  {
+        background-image: url('../img/cashless-icon-2.svg');
+    }
+    &__item-name.cashless__item-name--icon-3::before  {
+        background-image: url('../img/cashless-icon-3.svg');
+    }
+    &__item-name.cashless__item-name--icon-4::before  {
+        background-image: url('../img/cashless-icon-4.svg');
+    }
+
+    &__item-text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        margin-bottom: 18px;
+    }
+
+    &__button {
+        position: relative;
+        margin-top: auto;
+        text-align: left;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        border: 1px solid #3367FE;
+        padding: 21px 32px;
+        padding-left: 32px;
+        border-radius: 66px;
+        color: #3367FE;
+        margin-bottom: 22px;
+        cursor: pointer;
+        letter-spacing: 0.2px;
+        font-size: 16px;
+        line-height: 24px;
+        @media screen and (max-width: 1250px) {
+           text-align: center;
+        }
+    }
+    &__button::after {
+        content: ' ';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 50%;
+        right: 28px;
+        transform: translateY(-50%);
+        background-repeat: no-repeat;
+        background-image: url('../img/button-icon.svg');
+        @media screen and (max-width: 1250px) {
+            top: 50%;
+            right: 50%;
+            transform: translate(105px, -11px);
+         }
+    }
+}
+
+.cashless__button.button:hover {
+    background-color: #3367FE;
+    color: #FFFFFF;
+    box-shadow: 0px 11px 32px rgba(51, 103, 254, 0.25);
+}
+.cashless__button:hover::after {
+    background-image: url('../img/button-icon-active.svg');
+}

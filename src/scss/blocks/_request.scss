@@ -1,0 +1,117 @@
+@use "../variables";
+@use "../grid";
+.request {
+    background-color: variables.$blueRibbon;
+    padding: 134px 0;
+
+    @include grid.bp(md) {
+        padding: 60px 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+
+        @media screen and (max-width: 1030px) {
+            display: block;
+        }
+    }
+
+    &__box-content {
+        max-width: 510px;
+
+        @media screen and (max-width: 1030px) {
+            max-width: 1000px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__text {
+        font-family: 'IBMPlexSans-Light';
+        font-weight: 300;
+        font-size: 40px;
+        line-height: 52px;
+        color: variables.$white;
+
+        @include grid.bp(md) {
+            font-size: 40px;
+            line-height: 52px;
+        }
+
+        @include grid.bp(xs) {
+            font-size: 24px;
+            line-height: 31px;
+        }
+    }
+
+    &__form-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        padding-right: 45px;
+
+        @media screen and (max-width: 1030px) {
+            padding-right: 0px;
+        }
+    }
+
+
+    &__form-inner {
+        @include grid.bp(xs) {
+            width: 100%;
+        }
+    }
+
+    &__form-label {
+        display: block;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        color: variables.$white;
+        margin-bottom: 10px;
+    }
+
+    &__form-input {
+        padding: 15px 12px;
+        width: 450px;
+        background: #FFFFFF;
+        border-radius: 6px;
+        margin-bottom: 20px;
+
+        @include grid.bp(xs) {
+            width: 100%;
+        }
+    }
+
+    &__button {
+        display: block;
+        padding: 15px 12px;
+        width: 450px;
+        border-radius: 8px;
+        margin-top: 20px;
+
+        @include grid.bp(xs) {
+            width: 100%;
+        }
+    }
+}
+
+h2.request__title.title {
+    display: inline-block;
+    text-align: left;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    color: variables.$white;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    border-radius: 37px;
+}
+
+.request__form-inner .request__button.button--green:hover {
+    border-radius: 6px;
+}

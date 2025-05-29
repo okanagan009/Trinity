@@ -1,0 +1,92 @@
+@use "sass:math";
+// шрифт 
+
+@mixin font-face($font-family, $url, $weight, $style) {
+    @font-face {
+        font-family: "#{$font-family}";
+        src: url('#{$url}.woff2') format("woff2"), url('#{$url}.woff') format("woff");
+        font-weight: #{$weight};
+        font-display: swap;
+        font-style: $style;
+    }
+} 
+
+
+$grid-breakpoints: (
+    xs: 520px,
+    // sm: 576px,
+    md: 768px,
+    lg: 992px,
+    // xl: 1240px,
+    xxl: 1310px,
+) !default;
+
+@mixin container {
+    margin: 0 auto;
+    max-width: $container-max-width;
+    padding: 0 15px;
+}
+
+
+
+
+@mixin media($width) {
+    @media screen and (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin bp($name) {
+    $width: map.get($grid-breakpoints, $name);
+    @include media($width) {
+        @content;
+    }
+}
+
+@mixin flex {
+    display: flex;
+}
+
+@mixin flex-v-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-h-center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-all-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-all-sb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-column-start {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+@mixin bg-cover {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+

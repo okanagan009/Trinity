@@ -1,0 +1,67 @@
+@use "../variables";
+@use "../grid";
+
+.burger {
+    position: relative;
+    z-index: 31;
+    top: -4px;
+
+
+    width: 20px;
+    height: 18px;
+
+    display: none;
+    margin-left: 10px;
+
+    cursor: pointer;
+
+    &__line {
+        position: absolute;
+        left: 0;
+
+        display: block;
+        width: 100%;
+        height: 2px;
+
+        background-color: variables.$white;
+
+        transition: all .3s linear;
+    }
+
+    &__line--first {
+        top: 0;
+    }
+
+    &__line--second {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__line--third {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__line--fourth {
+        bottom: 0;
+    }
+}
+
+.burger--active .burger__line--first,
+.burger--active .burger__line--fourth {
+    opacity: 0;
+}
+
+.burger--active .burger__line--second {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.burger--active .burger__line--third {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+@include grid.bp(md) {
+    .burger {
+        display: block;
+    }
+}

@@ -1,0 +1,144 @@
+@use "../variables";
+@use "../grid";
+
+.include {
+    // margin-bottom: 254px;
+    margin-bottom: 120px;
+
+    @include grid.bp(md) {
+        // margin-bottom: 120px;
+        margin-bottom: 60px;
+    }
+
+    &__wrapper {
+        background-color: variables.$whiteLilac;
+        border-radius: 25px;
+        padding: 0 15px;
+
+        @include grid.bp(xs) {
+            margin: 0 -15px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 40px;
+
+        @include grid.bp(md) {
+            margin-bottom: 60px;
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        @include grid.bp(md) {
+            flex-direction: column;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 648px;
+        padding: 40px 85px 40px 0;
+
+        // width: 60%;
+        @media screen and (max-width: 1220px) {
+            // max-width: 500px;
+            padding-right: 55px;
+        }
+
+        @include grid.bp(md) {
+            max-width: 750px;
+            padding-right: 0px;
+        }
+    }
+
+    &__item {
+        position: relative;
+        background: variables.$white;
+
+        margin-bottom: 60px;
+        margin-left: 22px;
+        border-radius: 0px 6px 6px 0px;
+        padding: 38px 3px 41px 36px;
+
+        @include grid.bp(md) {
+            margin-bottom: 30px;
+            margin-left: 0px;
+            padding: 15px;
+        }
+    }
+
+    &__item.active::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background-color: variables.$blueRibbon;
+
+        @include grid.bp(md) {
+            display: none;
+        }
+    }
+
+    &__item:last-child {
+        margin-bottom: 0px;
+    }
+
+    &__item-img svg {
+        width: 240px;
+        height: 184px;
+
+        @include grid.bp(xs) {
+            width: 120px;
+            height: 92px;
+        }
+    }
+
+    &__item-img.include__item-img--one svg {
+        @include grid.bp(md) {
+            margin-left: -20px;
+        }
+
+        @include grid.bp(xs) {
+            margin-left: -10px;
+        }
+    }
+
+    &__item-name {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 21px;
+        margin-bottom: 10px;
+    }
+
+    &__item-text {
+        color: variables.$stormGray;
+    }
+
+    &__box-img {
+        padding-left: 55px;
+        align-self: center;
+
+        @include grid.bp(md) {
+            display: none;
+        }
+    }
+
+    &__wrapper-img svg {
+        width: 454px;
+        height: 410px;
+
+        @media screen and (max-width: 1000px) {
+            width: 320px;
+            height: 310px;
+        }
+
+    }
+}

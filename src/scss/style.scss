@@ -1,0 +1,49 @@
+//  libraries
+
+@use "normalize";
+@use "lib/swiper-bundle";  
+
+@use "variables"; 
+@use "mixins";
+// @use "setting";
+@use "fonts";
+@use "grid";
+@use "scaffolding";   
+
+//  modules
+
+@use "modules/popup";
+@use "modules/burger"; 
+@use "modules/toggle-btn";
+@use "modules/tabs";
+// @use "modules/select";
+
+//  blocks
+
+@use "blocks/title";
+@use "blocks/button";
+
+
+@use "blocks/header";
+
+@use "blocks/slider";
+@use "blocks/include";
+@use "blocks/formula";
+@use "blocks/integration"; 
+@use "blocks/account";
+@use "blocks/forwhom";
+@use "blocks/subscribe";
+@use "blocks/cashless";
+@use "blocks/cost";  
+@use "blocks/functional"; 
+@use "blocks/request";
+  
+@use "blocks/footer"; 
+   
+@use "blocks/application";
+  
+
+ 
+
+
+

@@ -1,0 +1,89 @@
+@use "../variables";
+
+.toggle-btn {
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 35px;
+    border: none;
+    margin: 0 auto;
+    background-color: variables.$dark;
+    border-radius: 30px;
+    transition: all 0.1s linear;
+    cursor: pointer;
+    &.toggle-btn--white{
+        background-color: #979797;
+    }
+    &::before {
+        content: "Тенге";
+        position: absolute;
+        top: 6px;
+        left: 16px;
+
+        font-family: "IBMPlexSans-Medium";
+        font-weight: 500;
+        font-size: 14px;
+        color: variables.$dark;
+    }
+    &.toggle--active::before {
+        color: variables.$white;
+    }
+    &::after {
+        content: "МРП";
+        position: absolute;
+        top: 6px;
+        right: 21px;
+
+        font-family: "IBMPlexSans-Medium";
+        font-weight: 500;
+        font-size: 14px;
+        color: variables.$white;
+    }
+    &.toggle--active::after {
+        color: variables.$dark;
+    }
+    &.toggle-btn--white::before {
+        color: variables.$dark;
+    }
+    &.toggle-btn--white.toggle--active::before {
+        color: variables.$white;
+    }
+    &.toggle-btn--white::after {
+        color: variables.$white;
+    }
+    &.toggle-btn--white.toggle--active::after {
+        color: variables.$dark;
+    }
+    // &.toggle-btn--white.toggle--active::before {
+    //     color: $dark;
+    // }
+    // &.toggle-btn--white::after {
+    //     color: $dark;
+    // }
+    // &.toggle-btn--white.toggle--active::after {
+    //     color: $dark;
+    // }
+  }
+  
+  .toggle-btn .inner-circle {
+    height: 35px;  
+    width: 70px;
+    box-shadow: 0px 8px 24px rgba(21, 23, 31, 0.48);
+    border-radius: 100px;
+    background-color: variables.$white;
+    transition: all 0.15s linear;
+  }
+  
+  .toggle-btn.toggle--active {
+    background-color: #121939;
+  }
+  .toggle-btn.toggle-btn--white.toggle--active {
+    background-color:  #979797;
+  }
+  
+.toggle-btn.toggle--active .inner-circle {
+    margin-left: 80px;
+}
+.toggle-btn.toggle-btn--white.toggle--active .inner-circle {
+    margin-left: 80px;
+}

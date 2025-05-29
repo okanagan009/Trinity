@@ -1,0 +1,312 @@
+@use "../variables";
+@use "../grid";
+.slider {
+    position: relative;
+    border-radius: 25px;
+    margin-bottom: 109px;
+
+    @media screen and (max-width: 1060px) {
+        margin-bottom: 90px;
+        background-color: variables.$mirage;
+    }
+
+    @include grid.bp(md) {
+        border-radius: 0px;
+    }
+
+    &__title {
+        letter-spacing: 0.03px;
+        margin-bottom: 65px;
+
+        @include grid.bp(xs) {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__box-text {
+        position: absolute;
+        z-index: 12;
+
+        display: flex;
+        flex-direction: column;
+        max-width: 535px;
+        padding: 72px 0 72px 70px;
+
+        @media screen and (max-width: 1060px) {
+            text-align: center;
+            padding: 72px 15px 72px 0px;
+            max-width: 1000px;
+        }
+
+        @include grid.bp(xs) {
+            padding: 30px 15px 30px 0px;
+        }
+    }
+
+    &__button {
+        margin-bottom: 60px;
+
+        @media screen and (max-width: 1060px) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include grid.bp(xs) {
+            padding: 15px 25px 15px 25px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    &__text {
+        color: variables.$white;
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: 0.01px;
+    }
+
+    &__box {
+        position: relative;
+    }
+
+    &__toggle {
+        position: absolute;
+        margin: auto;
+        right: 0;
+        // top: 50%;
+        transform: translate(-320px, 105px);
+        z-index: 9;
+
+        @media screen and (max-width: 1250px) {
+            transform: translate(-203px, 105px);
+        }
+
+        @media screen and (max-width: 1060px) {
+            right: 50%;
+            top: 50%;
+            transform: translate(50%, 200%);
+        }
+
+        @include grid.bp(xs) {
+            transform: translate(50%, 50%);
+        }
+
+        @media screen and (max-width: 383px) {
+            transform: translate(50%, 135%);
+        }
+    }
+
+    &__speedometer {
+        @media screen and (max-width: 1060px) {
+            margin: 0 -15px;
+        }
+
+    }
+
+    &__speedometer-wrapper {
+        position: relative;
+        width: 100%;
+        min-height: 530px;
+        border-radius: 25px;
+        background-color: variables.$mirage;
+
+        @media screen and (max-width: 1060px) {
+            min-height: 750px;
+        }
+
+        @include grid.bp(md) {
+            border-radius: 0px;
+        }
+
+        @include grid.bp(xs) {
+            min-height: 550px;
+        }
+    }
+
+    &__slide-wrapper--bg-2 {
+        position: relative;
+        background-image: url(../img/Ellipse-bg-2.svg);
+        background-color: variables.$mirage;
+
+    }
+
+    &__slide-wrapper--bg-3 {
+        position: relative;
+        background-image: url(../img/Ellipse-bg-3.svg);
+        background-color: variables.$mirage;
+    }
+
+    &__slide-wrapper {
+        position: relative;
+    }
+
+    &__slide-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 420px;
+        height: 230px;
+        background-repeat: no-repeat;
+    }
+
+    &__slide-bg.slider__slide-box--bg-textOne {
+        background-image: url('../img/speedometer\ -1.svg');
+        background-position: 33px 49px;
+        background-repeat: no-repeat;
+
+    }
+
+    &__slide-bg.slider__slide-box--bg-textTwo {
+        background-image: url('../img/Group-96.svg');
+        background-position: -50px -34px;
+        background-repeat: no-repeat;
+
+    }
+
+    &__slide-bg.slider__slide-box--bg-textThree {
+        background-image: url('../img/Group-97.svg');
+        background-position: -8px 7px;
+        background-repeat: no-repeat;
+
+    }
+
+    &__slide-text {
+
+        position: absolute;
+        width: 480px;
+        height: 270px;
+        padding-top: 120px;
+        right: 0;
+        transform: translate(-33%, 45%);
+
+        @media screen and (max-width: 1250px) {
+            transform: translate(-7%, 45%);
+        }
+
+        @media screen and (max-width: 1060px) {
+            right: 50%;
+            transform: translate(248px, 464px);
+        }
+
+        @include grid.bp(xs) {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 300px) scale(0.7);
+
+        }
+    }
+
+    &__text-name {
+        margin-bottom: 10px;
+
+        font-family: 'IBMPlexSans-Medium';
+        text-align: center;
+        color: variables.$white;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    &__text-number {
+        display: none;
+        margin-bottom: 10px;
+
+        font-family: "IBMPlexSans-SemiBold";
+        text-align: center;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 52px;
+        color: variables.$white;
+    }
+
+    &__text-content {
+        display: none;
+        margin-bottom: 10px;
+        font-family: IBMPlexSans-Medium;
+        text-align: center;
+        color: variables.$white;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+
+.content--tenge {
+    display: block;
+}
+
+.switch-content .content--tenge {
+    display: none;
+}
+
+.switch-content .content--mrp {
+    display: block;
+}
+
+.slider__text-left {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 46px;
+    background-repeat: no-repeat;
+    top: 52px;
+    left: -25px;
+    background: #FFFFFF;
+    border-radius: 8px 8px 0px 8px;
+    padding: 8px 16px;
+    font-family: 'IBMPlexSans-Medium';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    align-items: center;
+    letter-spacing: 0.1px;
+
+    color: #B94042;
+
+    @media screen and (max-width: 625px) {
+        display: none;
+    }
+}
+
+.slider__text-right {
+    content: '';
+    position: absolute;
+    width: 42px;
+    height: 78px;
+
+    font-family: 'IBMPlexSans-Medium';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    background-repeat: no-repeat;
+
+    bottom: 136px;
+    right: -55px;
+
+    padding: 8px 16px;
+    background: #FFFFFF;
+    border-radius: 8px 8px 8px 0px;
+
+    align-items: center;
+    letter-spacing: 0.1px;
+
+    color: #5581FF;
+
+    @media screen and (max-width: 1250px) {
+        bottom: 236px;
+        right: -25px;
+    }
+
+    @media screen and (max-width: 1060px) {
+        bottom: 136px;
+        right: -55px;
+    }
+
+    @media screen and (max-width: 625px) {
+        display: none;
+    }
+}

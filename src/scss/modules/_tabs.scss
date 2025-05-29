@@ -1,0 +1,25 @@
+
+  .tab-menu__item:hover {
+    cursor: pointer;
+  }
+  
+  .panel {
+    display: none;
+  }
+  .panel.show {
+    display: block;
+    animation-name: fade-in;
+    animation-duration: 0.3s;
+    
+    // animation: fade-in .3s; 
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

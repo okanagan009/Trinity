@@ -1,0 +1,9 @@
+@use "mixins";
+
+@include mixins.font-face("IBMPlexSans-Regular", "../fonts/IBMPlexSans-Regular", 400, normal);
+@include mixins.font-face("IBMPlexSans-SemiBold", "../fonts/IBMPlexSans-SemiBold", 600, normal);
+@include mixins.font-face("IBMPlexSans-Light", "../fonts/IBMPlexSans-Light", 300, normal);
+@include mixins.font-face("IBMPlexSans-Bold", "../fonts/IBMPlexSans-Bold", 700, normal);
+@include mixins.font-face("IBMPlexSans-Medium", "../fonts/IBMPlexSans-Medium", 500, normal);
+@include mixins.font-face("PTSans-Bold", "../fonts/PTSans-Bold", 700, normal);
+@include mixins.font-face("PTSans-Regular", "../fonts/PTSans-Regular", 400, normal); 

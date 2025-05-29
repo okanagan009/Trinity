@@ -1,0 +1,75 @@
+@use "../variables";
+@use "../grid";
+
+h1.title {
+    font-family: "IBMPlexSans-Light";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 52px;
+
+    color: variables.$white;
+
+    @include grid.bp(md) {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    @include grid.bp(xs) {
+        font-size: 24px;
+        line-height: 31px;
+    }
+}
+
+h2.title {
+    font-family: "IBMPlexSans-SemiBold";
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    color: variables.$blueRibbon;
+
+
+
+}
+
+h2.title span {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(39, 94, 254, 0.1);
+    border-radius: 37px;
+    margin-bottom: 40px;
+
+    @include grid.bp(md) {
+        margin-bottom: 35px;
+    }
+
+    @include grid.bp(xs) {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 30px;
+    }
+}
+
+
+
+p.subtitle {
+    font-family: "IBMPlexSans-Light";
+    text-align: center;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 52px;
+    text-align: center;
+
+    color: variables.$dark;
+
+    @include grid.bp(md) {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    @include grid.bp(xs) {
+        font-size: 24px;
+        line-height: 31px;
+    }
+}

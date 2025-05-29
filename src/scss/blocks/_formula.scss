@@ -1,0 +1,841 @@
+@use "../variables";
+@use "../grid";
+
+.formula {
+    margin-bottom: 120px;
+
+    @include grid.bp(md) {
+        margin-bottom: 60px;
+    }
+
+    &__subtitle {
+        margin-bottom: 37px;
+    }
+
+    &__wrapper-toggle {
+        margin-bottom: 40px;
+    }
+
+    &__tabs {
+
+        margin-bottom: 40px;
+    }
+
+    &__list {
+        display: flex;
+        gap: 25px;
+        margin-bottom: 40px;
+
+        @include grid.bp(xs) {
+            gap: 13px;
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        width: 135px;
+        height: 60px;
+        background-color: variables.$white;
+        border: 1px solid #D0D3DE;
+        border-radius: 50px;
+
+        @include grid.bp(xs) {
+            width: 100px;
+            height: 40px;
+        }
+    }
+
+    &__item.active {
+        background-color: variables.$blueRibbon;
+        border: 1px solid #275efe;
+    }
+
+    &__item.active .formula__item-text {
+        color: variables.$white;
+    }
+
+    &__item.active svg path {
+        fill: variables.$white;
+    }
+
+    &__item-box-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    &__item-text-icon {
+        padding-top: 8px;
+        width: 36px;
+        height: 36px;
+
+        @include grid.bp(xs) {
+            transform: scale(0.5);
+            padding-top: 2px;
+            margin-left: -8px;
+            // left: -4px;
+            // top: 1px;
+        }
+    }
+
+    &__item-text {
+        padding-top: 17px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: rgba(75, 77, 84, 0.5);
+        text-align: center;
+        align-items: center;
+
+        @include grid.bp(xs) {
+            margin-left: -7px;
+            padding-top: 1px;
+            font-size: 13px;
+            line-height: 16px;
+        }
+    }
+
+    &__calculation,
+    &__schedule {
+        position: relative;
+        margin-bottom: 40px;
+    }
+
+    &__calculation::before,
+    &__calculation::after {
+        content: " ";
+        position: absolute;
+        width: 29px;
+        height: 30px;
+
+    }
+
+    &__calculation::before {
+        background-image: url('../img/formula-plus.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        bottom: 50%;
+        right: 50%;
+        margin-bottom: -15px;
+        transform: translateX(-124px);
+
+        @media screen and (max-width:1050px) {
+            bottom: 50%;
+            right: 50%;
+            margin-bottom: 0;
+            transform: translateY(-124px) translateX(55px);
+        }
+
+        @include grid.bp(md) {
+            transform: translateY(-128px) translateX(56px);
+        }
+
+        @include grid.bp(xs) {
+            transform: translateY(-86px) translateX(13px)
+        }
+    }
+
+    &__calculation::after {
+        background-image: url('../img/formula-equal.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-top: -15px;
+        margin-right: -186px;
+        top: 50%;
+        right: 50%;
+
+        @media screen and (max-width:1050px) {
+            bottom: 50%;
+            right: 50%;
+            margin-top: 0;
+            margin-right: 0;
+            transform: translateY(-40px) translateX(55px);
+        }
+
+        @include grid.bp(md) {
+            transform: translateY(121px) translateX(56px);
+        }
+
+        @include grid.bp(xs) {
+            transform: translateY(163px) translateX(13px)
+        }
+    }
+
+    &__calculation-text,
+    &__schedule-text {
+        position: absolute;
+        left: 50%;
+        top: 13px;
+        transform: translateY(0) translateX(-33px);
+        font-family: 'PTSans-Regular';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26px;
+
+        @media screen and (max-width: 1050px) {
+            transform: translateY(0) translateX(-13px);
+        }
+
+        @include grid.bp(xs) {
+            left: 50%;
+            top: 50%;
+            transform: translateY(-405px) translateX(-50px);
+        }
+    }
+
+    &__calculation-text--two,
+    &__schedule-text--two {
+        @include grid.bp(xs) {
+            white-space: nowrap;
+            left: 50%;
+            top: 50%;
+            transform: translateY(-405px) translateX(-80px);
+        }
+    }
+
+    &__calculation-text--two {
+        transform: translateY(0) translateX(-70px);
+
+        @media screen and (max-width: 1050px) {
+            transform: translateY(0) translateX(-45px);
+        }
+    }
+
+    &__calculation-wrapper,
+    &__schedule-wrapper {
+        display: flex;
+        flex-direction: row;
+        border-radius: 12px;
+        background-color: #F8F9FC;
+        overflow: hidden;
+
+        @include grid.bp(xs) {
+            flex-direction: column;
+        }
+    }
+
+    &__calculation-name,
+    &__schedule-name {
+        font-family: 'PTSans-Bold';
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 34px;
+        text-align: center;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        background: #EDF1FF;
+        padding: 0 25px;
+        text-transform: uppercase;
+
+        @include grid.bp(xs) {
+            transform: rotate(0);
+            writing-mode: revert;
+            padding: 25px 0;
+            font-size: 24px;
+            line-height: 31px;
+        }
+    }
+
+    &__calculation-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 70px;
+        padding: 65px 0;
+        margin: 0 auto;
+
+        @media screen and (max-width: 1050px) {
+            padding: 65px 60px;
+        }
+
+        @media screen and (max-width: 850px) {
+            padding: 65px 35px;
+        }
+
+        @include grid.bp(md) {
+            flex-direction: column;
+        }
+
+        @include grid.bp(xs) {
+            padding: 65px 15px;
+        }
+
+    }
+
+    &__calculation-item {
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        border-radius: 50px;
+        width: 240px;
+        min-height: 220px;
+        background-color: variables.$white;
+
+        @media screen and (max-width: 1050px) {
+            margin: auto;
+        }
+    }
+
+    &__calculation-item--one {
+        margin-left: -25px;
+
+        @media screen and (max-width: 1050px) {
+            margin-left: 0px;
+            margin: auto;
+        }
+    }
+
+    &__calculation-item-name {
+        position: relative;
+        font-family: 'PTSans-Regular';
+        text-align: center;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        padding: 89px 15px 0 15px;
+        margin-bottom: 20px;
+    }
+
+    &__calculation-item-name::before {
+        content: " ";
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        top: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__calculation-item-name.formula__calculation-item-name--icon-cash::before {
+        background-image: url('../img/formula-cash.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__calculation-item-name.formula__calculation-item-name--icon-card::before {
+        background-image: url('../img/formula-card.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__calculation-item-name.formula__calculation-item-name--icon--total::before {
+        background-image: url('../img/formula-doc.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__calculation-item-number {
+        display: none;
+        font-family: 'PTSans-Bold';
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        text-align: center;
+        color: variables.$dark;
+        // margin-bottom: 40px;
+    }
+
+    &__calculation-item.formula__calculation-item--big {
+        position: relative;
+        z-index: 2;
+        background-color: inherit;
+        margin-left: 25px;
+
+        @media screen and (max-width: 1050px) {
+            margin-left: 0px;
+            margin: auto;
+        }
+    }
+
+    &__calculation-item.formula__calculation-item--big::before {
+        content: ' ';
+        position: absolute;
+        z-index: -1;
+        left: -25px;
+        top: -20px;
+        width: 290px;
+        height: 260px;
+        background: rgba(53, 190, 100, 0.1);
+        border-radius: 50px;
+    }
+
+    &__calculation-item.formula__calculation-item--big .formula__calculation-item-number {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    &__tablet {
+        display: grid;
+        margin-bottom: 40px;
+        grid-template-areas:
+            "a a a"
+            "b c d"
+            "b e f"
+            "g h i"
+            "g j k";
+
+        @include grid.bp(md) {
+            grid-template-areas:
+                "a a "
+                "b b "
+                "c e "
+                "d f"
+                "g g"
+                "h j"
+                "i k";
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    &__tablet-content {
+        font-family: 'PTSans-Regular';
+        border: 1px solid #D0D4F1;
+        padding: 10px 15px;
+
+        @include grid.bp(md) {
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: 360px) {
+            padding: 6px;
+        }
+    }
+
+    &__tablet-content--cell-2,
+    &__tablet-content--cell-3,
+    &__tablet-content--cell-4,
+    &__tablet-content--cell-5,
+    &__tablet-content--cell-6 {
+        background-color: #FDEFEF;
+    }
+
+    &__tablet-content--cell-3 p {
+        @include grid.bp(md) {
+            max-width: 115px;
+        }
+    }
+
+    &__tablet-content--cell-4 p {
+        @include grid.bp(md) {
+            max-width: 137px;
+        }
+    }
+
+    &__tablet-content--cell-5 p {
+        @include grid.bp(md) {
+            // text-align: center;
+            margin: 0 auto;
+            max-width: 124px;
+        }
+    }
+
+    &__tablet-content--cell-6 p {
+        @include grid.bp(md) {
+            margin: 0 auto;
+            max-width: 106px;
+        }
+    }
+
+
+    &__tablet-content--cell-7,
+    &__tablet-content--cell-8,
+    &__tablet-content--cell-9,
+    &__tablet-content--cell-10,
+    &__tablet-content--cell-11 {
+        background-color: #E9FAEA;
+    }
+
+    &__tablet-content--cell-8 p {
+        @include grid.bp(md) {
+            max-width: 116px;
+        }
+    }
+
+    &__tablet-content--cell-9 p {
+        @include grid.bp(md) {
+            max-width: 138px;
+        }
+    }
+
+    &__tablet-content--cell-10 p {
+        @include grid.bp(md) {
+            margin: auto;
+            max-width: 180px;
+        }
+    }
+
+    &__tablet-content--cell-11 p {
+        @include grid.bp(md) {
+            margin: auto;
+            max-width: 180px;
+        }
+    }
+
+    &__tablet-title span {
+        color: #275efe;
+    }
+
+    &__tablet-title--cell-1 {
+        grid-area: a;
+
+        border: 1px solid #D6D6D6;
+        padding: 10px 15px;
+        border-radius: 12px 12px 0px 0px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 32px;
+
+        @include grid.bp(md) {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+
+    }
+
+    &__tablet-content--cell-2 {
+        grid-area: b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include grid.bp(md) {
+            font-size: 16px;
+        }
+    }
+
+    &__tablet-content--cell-3 {
+        grid-area: c;
+
+        @include grid.bp(md) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__tablet-content--cell-4 {
+        grid-area: d;
+
+        @include grid.bp(md) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__tablet-content--cell-5 {
+        grid-area: e;
+        padding: 25px 15px;
+    }
+
+    &__tablet-content--cell-6 {
+        grid-area: f;
+        padding: 25px 15px;
+    }
+
+    &__tablet-content--cell-7 {
+        grid-area: g;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include grid.bp(md) {
+            font-size: 16px;
+        }
+    }
+
+    &__tablet-content--cell-8 {
+        grid-area: h;
+
+        @include grid.bp(md) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__tablet-content--cell-9 {
+        grid-area: i;
+
+        @include grid.bp(md) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__tablet-content--cell-10 {
+        grid-area: j;
+        padding: 25px 15px;
+    }
+
+    &__tablet-content--cell-11 {
+        grid-area: k;
+        padding: 25px 15px;
+    }
+
+    &__tablet-subtitle {
+        position: relative;
+        padding-right: 30px;
+        // height: 100%;
+        align-self: center;
+        justify-self: center;
+        align-items: center
+    }
+
+    &__tablet-subtitle::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 24px;
+        width: 24px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__tablet-subtitle.formula__tablet-subtitle--icon-1::after {
+        background-image: url('../img/tablet-icn-1.svg');
+    }
+
+    &__tablet-subtitle.formula__tablet-subtitle--icon-2::after {
+        background-image: url('../img/tablet-icn-2.svg');
+    }
+
+
+
+    &__schedule-list {
+        padding: 60px 30px;
+        width: 100%;
+
+        @include grid.bp (xs) {
+            padding: 60px 15px;
+        }
+    }
+
+    &__schedule-item-name {
+        font-family: "PTSans-Regular";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        margin-left: 56px;
+        margin-bottom: 15px;
+    }
+
+    &__schedule-item-name--bottom {
+        // text-align: right;
+        // margin: auto;
+        text-align: center;
+        margin-left: 0;
+
+        @include grid.bp(xs) {
+            text-align: right;
+            margin-right: 18%;
+        }
+    }
+
+    &__schedule-inner-content {
+        max-width: 140px;
+        background-color: rgba(0, 0, 0, 0.8);
+        margin-left: 10px;
+        padding: 8px 16px;
+        border-radius: 8px;
+        margin-bottom: 7px;
+    }
+
+    &__schedule-content {
+        font-family: "PTSans-Regular";
+        text-align: center;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 5px;
+        color: variables.$white;
+
+        @include grid.bp(xs) {
+            font-size: 12px;
+        }
+    }
+
+    &__schedule-number {
+        display: none;
+
+        text-align: center;
+        font-family: "PTSans-Bold";
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        color: variables.$white;
+
+        @include grid.bp(xs) {
+            font-size: 12px;
+        }
+    }
+
+    &__schedule-chart {
+        position: relative;
+        padding-left: 2px;
+        margin-bottom: 7px;
+        width: 170px;
+        height: 20px;
+        background-color: #D0D4F1;
+        border-radius: 0px 6px 6px 0px;
+    }
+
+    &__schedule-chart::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 0px;
+        height: 40px;
+        width: 2px;
+        background-color: rgba(208, 208, 208, 0.6);
+    }
+
+    &__schedule-chart.formula__schedule-chart--long {
+        width: 100%;
+    }
+
+    &__schedule-elem {
+        position: absolute;
+    }
+
+    &__schedule-elem--chart-red {
+        width: 50%;
+        height: 20px;
+        left: 0;
+        background-color: #EB5656;
+    }
+
+    &__schedule-elem--chart-blue {
+        width: 50%;
+        height: 20px;
+        right: 0;
+        background-color: variables.$blueRibbon;
+        border-radius: 0px 6px 6px 0px;
+    }
+
+    &__schedule-chart--long .formula__schedule-elem--chart-red {
+        width: 33%;
+    }
+
+    &__schedule-chart--long .formula__schedule-elem--chart-blue {
+        width: 67%;
+    }
+
+    &__schedule-chart--long.formula__schedule-chart--bottom .formula__schedule-elem--chart-red {
+        width: 37%;
+        z-index: 2;
+    }
+
+    &__schedule-chart--long.formula__schedule-chart--bottom .formula__schedule-elem--chart-blue {
+        width: 83%;
+        left: 0;
+        z-index: 1;
+        border-radius: 0;
+
+    }
+
+    &__schedule-wrapper-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    &__schedule-inner-content--arrow {
+        position: relative;
+        margin-bottom: 12px;
+    }
+
+    &__schedule-inner-content--arrow::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        left: 50%;
+        bottom: -10px;
+        transform: translateX(-50%);
+        height: 10px;
+        background-image: url('../img/arrow-bottom.svg');
+        background-repeat: no-repeat;
+    }
+
+    &__schedule-box {
+
+        display: flex;
+        gap: 25px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__schedule-box-text {
+        position: relative;
+        padding-left: 20px;
+        font-family: 'PTSans-Bold';
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 20px;
+        color: rgba(21, 23, 31, 0.6);
+    }
+
+    &__schedule-box-text::before {
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: black;
+        border-radius: 3px;
+        width: 14px;
+        height: 14px;
+    }
+
+    &__schedule-box-text.formula__schedule-box-text--icon-cash::before {
+        background: #EB5656;
+    }
+
+    &__schedule-box-text.formula__schedule-box-text--icon-noncash::before {
+        background: #3367FE;
+    }
+
+    &__schedule-text.schedule-text--two-schedule {
+        transform: translateY(0) translateX(-56px);
+
+        @media screen and (max-width: 1050px) {
+            transform: translateY(0) translateX(-45px);
+        }
+
+        @include grid.bp(xs) {
+            white-space: nowrap;
+            transform: translateY(-145px) translateX(-80px);
+        }
+
+    }
+
+    &__schedule-text.schedule-text--two-schedule-top {
+        @include grid.bp(xs) {
+            transform: translateY(-145px) translateX(-53px)
+        }
+
+    }
+}
+
+
+.content--tenge {
+    display: block;
+}
+
+.switch-content .content--tenge {
+    display: none;
+}
+
+.switch-content .content--mrp {
+    display: block;
+}
