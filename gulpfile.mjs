@@ -288,6 +288,7 @@ const watch = gulp.parallel(build, watchFiles, browserSync, browserSyncReload);
 /*
  * Export a default task
  */
+export { build };
 export default watch;
 
 
